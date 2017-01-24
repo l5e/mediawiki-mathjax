@@ -26,7 +26,7 @@ class MathJax_Parser {
 
     static function RemoveMathTags(&$parser, &$text) 
     {
-        $text = preg_replace('|:\s*<math>(.*?)</math>|s', '\\[$1\\]', $text);
+        $text = preg_replace('|^:+\s*<math>(.*?)</math>|s', '\\[$1\\]', $text);
         $text = preg_replace('|<math>(.*?)</math>|s',     '\\($1\\)', $text);
 
         return true;
